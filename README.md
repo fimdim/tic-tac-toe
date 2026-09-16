@@ -1,4 +1,7 @@
-# sample-app
+---
+title: Sample Tic Tac Toe App
+description: A vanilla JavaScript Tic Tac Toe game with GitHub Copilot customizations
+---
 
 A sample repository containing a **Tic Tac Toe** web game and GitHub Copilot customization files.
 
@@ -28,9 +31,10 @@ Features:
 - Two-player turn-based gameplay (X vs O)
 - Win detection for all 8 winning lines
 - Draw detection
-- Session scoreboard with win/draw tracking
+- Persistent scoreboard with win/draw tracking
 - New Game and Clear Scores controls
 - Accessible status updates and board cell labels
+- Responsive mobile and desktop layout
 - Animated winning cells
 
 ## Project Structure
@@ -40,6 +44,7 @@ Features:
 | `tic-tac-toe/index.html` | Main game markup and UI controls |
 | `tic-tac-toe/style.css` | Game styling and animations |
 | `tic-tac-toe/game.js` | Game state, winner detection, and scoreboard logic |
+| `tic-tac-toe/favicon.svg` | Browser icon using the game color palette |
 | `AGENTS.md` | Repository-level guidance for Copilot agents |
 
 ## Development Notes
@@ -57,4 +62,10 @@ Features:
 | `.github/agents/*.agent.md` | Custom agent definitions |
 | `.github/prompts/*.prompt.md` | Reusable prompt templates |
 | `.github/skills/<skill>/SKILL.md` | Copilot skill definitions |
-| `.github/mcp.json` | MCP server configuration (`filesystem`, `github`) |
+| `.vscode/mcp.json` | MCP server configuration (`filesystem`, `github`) |
+
+The GitHub MCP server uses OAuth through VS Code 1.101 or later, so the repository does not store a GitHub token. The filesystem MCP server is pinned to a specific version and limited to the current workspace.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
