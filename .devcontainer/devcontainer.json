@@ -1,0 +1,26 @@
+{
+  "name": "sample-app",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Tic Tac Toe",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "node --check tic-tac-toe/game.js && node tests/game.test.js",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.exclude": {
+          "**/.git": true
+        }
+      }
+    }
+  }
+}
