@@ -40,3 +40,16 @@ Repository guidance for GitHub Copilot agents.
 - Do not introduce external dependencies unless explicitly requested.
 - Do not commit secrets.
 - Keep changes minimal and task-focused.
+
+## Agent workflow
+
+For complete feature work, use the orchestrated workflow defined in `.github/agents/orchestrator.agent.md`:
+
+1. `feature-planner` defines the scope, acceptance criteria, edge cases, and rollout steps.
+2. `implementer` applies the approved plan and runs focused checks.
+3. `test-writer` adds or updates focused game logic tests.
+4. `doc-maintainer` updates documentation when the change affects behavior, commands, configuration, or agent guidance.
+5. `code-reviewer` independently reviews the implementation.
+6. `release-validator` runs final checks and reports readiness.
+
+The orchestrator coordinates these stages and passes their outputs between them. Skip `doc-maintainer` only when no documentation-relevant behavior or workflow changed. Do not report work as complete until the relevant tests and release validation pass. Keep implementation, documentation, and review responsibilities separate.
